@@ -1,0 +1,1592 @@
+[
+  {
+    "model": "app.Blurb",
+    "pk": 1,
+    "fields": {
+      "job": 1,
+      "heading": "Requirements",
+      "body": "The ideal candidate is as passionate about solving challenges through technology. They are well-versed in building proof of concepts from scratch and taking these POCs to production and scale. The right fit will have the engineering experience to build and iterate quickly and is comfortable working with product and design to set the technical strategy and roadmap."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 1,
+    "fields": {
+      "blurb": 1,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 1,
+    "fields": {
+      "blurb_list": 1,
+      "text": "5+ years of industry experience in a software engineering role, preferably building a SaaS product. You can demonstrate significant impact that your work has had on the product and/or the team."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 2,
+    "fields": {
+      "blurb_list": 1,
+      "text": "Experience with scalable distributed systems, both built from scratch as well as on AWS primitives."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 3,
+    "fields": {
+      "blurb_list": 1,
+      "text": "Extremely data-driven."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 4,
+    "fields": {
+      "blurb_list": 1,
+      "text": "Ability to debug complex systems."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 2,
+    "fields": {
+      "job": 1,
+      "heading": "Role",
+      "body": "We are looking for a Senior Software Engineer to join as one of our first hires. As we iterate on our MVP, you will have the opportunity to drive the vision and own the build behind our digital experience. You\u2019ll have the support of an experienced technical advisor, a Head of Product, and an external team to work with."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 2,
+    "fields": {
+      "blurb": 2,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 5,
+    "fields": {
+      "blurb_list": 2,
+      "text": "This role is for someone who is excited about the early stage - you\u2019ll be responsible for turning the platform vision into reality through smart, efficient building and testing."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 6,
+    "fields": {
+      "blurb_list": 2,
+      "text": "Translate the product roadmap into engineering requirements and own the engineering roadmap"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 7,
+    "fields": {
+      "blurb_list": 2,
+      "text": "Work with limited resources to test and learn as efficiently as possible, while laying the framework to build a more scalable product over time."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 8,
+    "fields": {
+      "blurb_list": 2,
+      "text": "Collaborate with product, design, and external engineering teammates as needed."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 3,
+    "fields": {
+      "job": 2,
+      "heading": "Requirements",
+      "body": "We are looking to carefully add great developers which care about solving problems & which have been in a relationship with Purescript and/or Haskell for at least 3 years (Not necessarily monogamous though)."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 3,
+    "fields": {
+      "blurb": 3,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 9,
+    "fields": {
+      "blurb_list": 3,
+      "text": "You have a knack for UI design"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 10,
+    "fields": {
+      "blurb_list": 3,
+      "text": "Have Haskell or Purescript knowledge/hacking under your belt."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 11,
+    "fields": {
+      "blurb_list": 3,
+      "text": "An experienced engineer familiar with automated testing and deployment."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 12,
+    "fields": {
+      "blurb_list": 3,
+      "text": "Experienced with functional programming and domain-driven design or simply interested and capable of learning on the job."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 4,
+    "fields": {
+      "job": 2,
+      "heading": "Role",
+      "body": "The role is more frontend-focused where you will be tasked to build browser-based UIs for Haskell applications."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 4,
+    "fields": {
+      "blurb": 4,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 13,
+    "fields": {
+      "blurb_list": 4,
+      "text": "Build up our tech stack around Haskell and introduce best practices"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 14,
+    "fields": {
+      "blurb_list": 4,
+      "text": "Contribute to the design of our conversational engine and the architecture supporting it"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 15,
+    "fields": {
+      "blurb_list": 4,
+      "text": "Design new UIs, working closely with users, stakeholders and the backend team."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 16,
+    "fields": {
+      "blurb_list": 4,
+      "text": "Maximize robustness, performance, and scalability of solutions"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 5,
+    "fields": {
+      "job": 3,
+      "heading": "Requirements",
+      "body": "As our ideal candidate, you have previous experience in Ruby on Rails and are eager to continue to develop professionally. You work well in an agile environment, and collaborate well with other Software Engineers, Test Automation Engineers, Product Managers, and Designers. You thrive in a fast-paced environment, and are able to adapt when needed."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 5,
+    "fields": {
+      "blurb": 5,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 17,
+    "fields": {
+      "blurb_list": 5,
+      "text": "Active participation on a software development team designing, coding, testing, and releasing functionality to our customers"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 18,
+    "fields": {
+      "blurb_list": 5,
+      "text": "Close collaboration with other engineers and product managers to become a valued member of an autonomous, cross-functional team"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 19,
+    "fields": {
+      "blurb_list": 5,
+      "text": "Operational responsibility for the services that are owned by your team, potentially including taking part in an on-call rotation"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 6,
+    "fields": {
+      "job": 3,
+      "heading": "Role",
+      "body": "This is an IDEAL job if you already have a few years of software engineering experience under your belt, and you want to be part of a small, intensely skilled team, who feel total ownership of their work, and can\u2019t imagine a day without learning & coding. You will play a crucial role in the Vector platform and everything you do will matter."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 6,
+    "fields": {
+      "blurb": 6,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 20,
+    "fields": {
+      "blurb_list": 6,
+      "text": "Design, code, deploy, and test applications according to the user stories/requirements and industry best practices."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 21,
+    "fields": {
+      "blurb_list": 6,
+      "text": "Follow industry standard software lifecycle process when developing software"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 22,
+    "fields": {
+      "blurb_list": 6,
+      "text": "Conduct code-review with other developers"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 23,
+    "fields": {
+      "blurb_list": 6,
+      "text": "Assist in development and peer review of plans, technical solutions, and related documentation."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 7,
+    "fields": {
+      "job": 4,
+      "heading": "Requirements",
+      "body": "As a hands-on subject matter expert, you will use expert-level engineering knowledge to provide technical support and help translate customer requirements into exciting new product features. You will be working within multi-disciplinary teams to create pervasive simulation solutions, advance your industry knowledge, and grow the business impact.\u200b"
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 7,
+    "fields": {
+      "blurb": 7,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 24,
+    "fields": {
+      "blurb_list": 7,
+      "text": "Expert Node.js proficiency in a production environment"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 25,
+    "fields": {
+      "blurb_list": 7,
+      "text": "Proficiency in developing REST APIs"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 26,
+    "fields": {
+      "blurb_list": 7,
+      "text": "Expert proficiency with relational databases (MySQL) and optimizing SQL queries"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 27,
+    "fields": {
+      "blurb_list": 7,
+      "text": "Extensive experience with microservices-based architecture in production"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 28,
+    "fields": {
+      "blurb_list": 7,
+      "text": "Experience with CircleCI, Jenkins or similar CI/CD applications"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 8,
+    "fields": {
+      "job": 4,
+      "heading": "Role",
+      "body": "You'll work alongside a skilled team of Senior Engineers across five countries participating in system design, architecture, maintenance, and refactoring decisions. You'll be working on new features and integrations and be active in code reviews and coordinating engineering efforts across teams and products."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 8,
+    "fields": {
+      "blurb": 8,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 29,
+    "fields": {
+      "blurb_list": 8,
+      "text": "Administering and configuring software"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 30,
+    "fields": {
+      "blurb_list": 8,
+      "text": "Identify opportunity and help to implement a monitoring solution for proactive and predictable operations."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 31,
+    "fields": {
+      "blurb_list": 8,
+      "text": "Triaging problems with applications - identifying known errors and problem trends and finding permanent solutions through root cause analysis."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 32,
+    "fields": {
+      "blurb_list": 8,
+      "text": "Providing level 2 and 3 application support."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 9,
+    "fields": {
+      "job": 5,
+      "heading": "Requirements",
+      "body": "We are looking for talented and motivated engineers who can hit the ground running and take our products to the next level. The engineers who are building our platform across the stack are always willing to go the extra mile to deliver the highest quality software and client experiences. Ideally, you would have:"
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 9,
+    "fields": {
+      "blurb": 9,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 33,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Bachelor's degree preferred, strong preference for Computer Science field of study"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 34,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Minimum of 5 years of relevant work experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 35,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Hands-on experience with configuring and maintaining resources on AWS"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 36,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Experience and solid understanding to deploy and maintain container orchestration platforms such as ECS or Kubernetes"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 37,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Knowledge of networking fundamentals"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 38,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Expertise with cloud security, understand the principle of least privilege"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 39,
+    "fields": {
+      "blurb_list": 9,
+      "text": "Strong written and verbal communication skills"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 10,
+    "fields": {
+      "job": 5,
+      "heading": "Role",
+      "body": "You will work closely with development teams to implement automation solutions using technologies like Amazon Web Services (AWS), Ansible, Jenkins, and Kubernetes to automatically build, test, integrate, and deploy complex, modern systems. You will leverage the full power of the cloud to configure highly resilient and scalable applications that support zero downtime. This position is open to a mid-level to senior professional depending on experience and background."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 10,
+    "fields": {
+      "blurb": 10,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 40,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Configure and maintain resources on AWS"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 41,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Maintain infrastructure as code using Terraform, CloudFormation, and/or Ansible"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 42,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Responsible for production deployments using Jenkins, CodeDeploy, GitHub Actions"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 43,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Manage security groups and access controls"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 44,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Use ticket management system such as Jira and Confluence to manage work priorities"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 45,
+    "fields": {
+      "blurb_list": 10,
+      "text": "Ability to clearly articulate and communicate complex technical ideas to non-DevOps colleagues"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 11,
+    "fields": {
+      "job": 6,
+      "heading": "Requirements",
+      "body": "You are likely someone with a solid background in end-user support and troubleshooting, as this position involves dealing with a large, and often changing, number of day-to-day issues which arise in supporting the information technology requirements of our applications."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 11,
+    "fields": {
+      "blurb": 11,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 46,
+    "fields": {
+      "blurb_list": 11,
+      "text": "Bachelor\u2019s degree in IT or related field"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 47,
+    "fields": {
+      "blurb_list": 11,
+      "text": "5+ years demonstrating strong technical skills supporting end users"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 48,
+    "fields": {
+      "blurb_list": 11,
+      "text": "3+ years in a leadership capacity (Team Lead, Supervisor, or Manager)"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 49,
+    "fields": {
+      "blurb_list": 11,
+      "text": "Experience using Professional Services Automation (PSA) tools or ticketing platforms such as ConnectWise, Autotask, ServiceNow, etc."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 50,
+    "fields": {
+      "blurb_list": 11,
+      "text": "Possess and demonstrate excellent interpersonal/communication skills"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 12,
+    "fields": {
+      "job": 6,
+      "heading": "Role",
+      "body": "This is an 80% management and 20% hands-on supervisory role where you will be responsible for the support of automation technologies and managing a team of support engineers in a 24x7 high-volume environment."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 12,
+    "fields": {
+      "blurb": 12,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 51,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Lead, coach and manage service desk teams on a daily basis to improve customer service and efficiency"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 52,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Implement best practices and standardize service desk processes to provide exceptional \u201cwhite glove\u201d service and deliverable"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 53,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Oversee the work performed by the team to help prioritize open tickets and tasks"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 54,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Provide guidance and direction on technical issues"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 55,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Develop and maintain KPIs for measuring team performance and improving customer experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 56,
+    "fields": {
+      "blurb_list": 12,
+      "text": "Provide status reports to management and collaborate on new initiatives and technical planning"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 13,
+    "fields": {
+      "job": 7,
+      "heading": "Requirements",
+      "body": "You are an experienced mobile engineer looking to make Pomodoro one of the best mobile experiences out there. You are someone who excels at customer-centric product development and has a passion for working on application architecture and design, and making smooth, delightful experiences. You care deeply about quality, are energized by partnership and collaboration, and you strive to enable others around you to excel."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 13,
+    "fields": {
+      "blurb": 13,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 57,
+    "fields": {
+      "blurb_list": 13,
+      "text": "Strong programming skills in Objective-C and/or Swift"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 58,
+    "fields": {
+      "blurb_list": 13,
+      "text": "Previous experience developing mobile applications on iOS"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 59,
+    "fields": {
+      "blurb_list": 13,
+      "text": "Experience working closely across a variety of teams, including product management, design, and engineering"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 60,
+    "fields": {
+      "blurb_list": 13,
+      "text": "Knowledge of core CS concepts such as common data structures and algorithms, profiling, and optimization"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 14,
+    "fields": {
+      "job": 7,
+      "heading": "Role",
+      "body": "You will be responsible for building infrastructure and abstractions to help us double our engineering velocity.  You will work at all layers of the stack and closely with partners across engineering, data science, research, product, and design. You will help our codebase stay ahead of the curve of the constantly evolving development ecosystem."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 14,
+    "fields": {
+      "blurb": 14,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 61,
+    "fields": {
+      "blurb_list": 14,
+      "text": "Design and develop UI components that make feature development faster, baking in consistency and accessibility to the designs"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 62,
+    "fields": {
+      "blurb_list": 14,
+      "text": "Build frameworks and infrastructure to make product development faster, safer, and more consistent"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 63,
+    "fields": {
+      "blurb_list": 14,
+      "text": "Improve the performance and stability of the mobile app"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 64,
+    "fields": {
+      "blurb_list": 14,
+      "text": "Strive to keep the mobile codebase secure"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 15,
+    "fields": {
+      "job": 8,
+      "heading": "Requirements",
+      "body": "The candidate must have work experience in all aspects of designing and constructing J2EE/EJB systems and developing system requirements and design specifications, and J2EE/EJB Coding for new and existing applications."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 15,
+    "fields": {
+      "blurb": 15,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 65,
+    "fields": {
+      "blurb_list": 15,
+      "text": "Computer Science degree or equivalent"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 66,
+    "fields": {
+      "blurb_list": 15,
+      "text": "Experience with EJB, J2EE,Tomcat, JBoss andrelational databases such as MySQL, MSSQL, Oracle"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 67,
+    "fields": {
+      "blurb_list": 15,
+      "text": "At least three years of post-graduate experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 68,
+    "fields": {
+      "blurb_list": 15,
+      "text": "Deep understanding of OO programming principals and commitment to clean, efficient, well documented code."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 16,
+    "fields": {
+      "job": 8,
+      "heading": "Role",
+      "body": "Job responsibilities will include developing scalable Java applications while providing expertise in the full software development lifecycle, from concept and design to testing."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 16,
+    "fields": {
+      "blurb": 16,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 69,
+    "fields": {
+      "blurb_list": 16,
+      "text": "Design and develop high-volume, low-latency applications that enhance Maker's core platform"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 70,
+    "fields": {
+      "blurb_list": 16,
+      "text": "Create well designed, testable, efficient code"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 71,
+    "fields": {
+      "blurb_list": 16,
+      "text": "Participate in all phases of the development lifecycle"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 72,
+    "fields": {
+      "blurb_list": 16,
+      "text": "Investigate alternatives and technologies and present them for architectural review, in order to support continuous improvement"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 17,
+    "fields": {
+      "job": 9,
+      "heading": "Requirements",
+      "body": "You will be responsible for executing high quality solutions for customers and contributing to the day-to-day technical excellence of a delivery team. You should have a deep understanding of Modern JavaScript, HTML and CSS, the software development life cycle, and possess the ability to implement and execute standard software architecture patterns."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 17,
+    "fields": {
+      "blurb": 17,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 73,
+    "fields": {
+      "blurb_list": 17,
+      "text": "4+ years of experience of Frontend Development"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 74,
+    "fields": {
+      "blurb_list": 17,
+      "text": "Expertise with React required"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 75,
+    "fields": {
+      "blurb_list": 17,
+      "text": "Expertise with Next.js, Apollo, Typescript, and GraphQL preferred"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 18,
+    "fields": {
+      "job": 9,
+      "heading": "Role",
+      "body": "Beyond working closely with our team to build an exciting app, you\u2019ll be leading Frontend development of our React/Next.js product. You\u2019ll be coming up with UI/UX for the app and making architectural decisions for the frontend."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 18,
+    "fields": {
+      "blurb": 18,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 76,
+    "fields": {
+      "blurb_list": 18,
+      "text": "Use your thorough understanding of core client-side technologies to architect complex user interactions for desktop and mobile browsers using React"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 77,
+    "fields": {
+      "blurb_list": 18,
+      "text": "Create universal JS modules to be used on both the client and the server"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 78,
+    "fields": {
+      "blurb_list": 18,
+      "text": "Lead, direct and mentor more junior team members (including code review)"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 79,
+    "fields": {
+      "blurb_list": 18,
+      "text": "Cover your code with unit and integration tests written with Jest and Mocha"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 80,
+    "fields": {
+      "blurb_list": 18,
+      "text": "Take part in decision-making around major architectural choices of the front-end team"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 19,
+    "fields": {
+      "job": 10,
+      "heading": "Requirements",
+      "body": "To be successful in this role, you should have experience with design software and wireframe tools preferably Figma. You should also have a portfolio of professional design projects that includes work with web/mobile applications."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 19,
+    "fields": {
+      "blurb": 19,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 81,
+    "fields": {
+      "blurb_list": 19,
+      "text": "At least 3 years of experience in a related field."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 82,
+    "fields": {
+      "blurb_list": 19,
+      "text": "Portfolio of design projects."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 83,
+    "fields": {
+      "blurb_list": 19,
+      "text": "Degree in Design, UX or relevant field."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 84,
+    "fields": {
+      "blurb_list": 19,
+      "text": "Experience with design process and systematic approach to organization, workflow"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 20,
+    "fields": {
+      "job": 10,
+      "heading": "Role",
+      "body": "You\u2019ll create both functional and appealing features that address our clients\u2019 needs and help us grow our customer base. We expect you to have experience with market/user research and stay current with most recent trends, tools, workflows."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 20,
+    "fields": {
+      "blurb": 20,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 85,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Gather and evaluate user requirements in collaboration with UX/UI manager or stakeholders."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 86,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Illustrate design ideas using storyboards, process flows and sitemaps."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 87,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Develop UI mockups and prototypes that clearly illustrate how sites function and look like."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 88,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Create original graphic designs (eg. images, sketches and tables)."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 89,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Identify and troubleshoot UX problems"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 90,
+    "fields": {
+      "blurb_list": 20,
+      "text": "Conduct layout adjustments based on user feedback."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 21,
+    "fields": {
+      "job": 11,
+      "heading": "Requirements",
+      "body": "We'd love to hear from you if you take ownership of your work and continuously want to improve the products you've built. We're looking for developers who have an uncanny abilithy to work very well cross-functionality in a flat startup."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 21,
+    "fields": {
+      "blurb": 21,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 91,
+    "fields": {
+      "blurb_list": 21,
+      "text": "4+ years of web development experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 92,
+    "fields": {
+      "blurb_list": 21,
+      "text": "Strong CS fundamentals and problem solving skills"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 93,
+    "fields": {
+      "blurb_list": 21,
+      "text": "Production expertise with Ruby on Rails [preferred], Python, PHP, Java, or your favorite modern stack"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 94,
+    "fields": {
+      "blurb_list": 21,
+      "text": "Excellent debugging skills & strong belief in automated testing and coverage"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 95,
+    "fields": {
+      "blurb_list": 21,
+      "text": "Team player who enjoys mentoring and agile environments"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 96,
+    "fields": {
+      "blurb_list": 21,
+      "text": "Passion, drive, energy, a sense of humor and a great attitude!"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 22,
+    "fields": {
+      "job": 11,
+      "heading": "Role",
+      "body": "At Crowdfund, you will have the opportunity to literally change the world and people\u2019s lives by developing new features for our consumer platform to make it even more robust. You\u2019ll work with exceptional developers and there are lots of interesting technical challenges to tackle, including projects dealing with heavy transaction volume, scalability and Big Data."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 22,
+    "fields": {
+      "blurb": 22,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 97,
+    "fields": {
+      "blurb_list": 22,
+      "text": "Build a marketplace that empowers people to follow their dreams!"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 98,
+    "fields": {
+      "blurb_list": 22,
+      "text": "Architect, design and implement beautiful, performant & scalable Ruby code."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 99,
+    "fields": {
+      "blurb_list": 22,
+      "text": "Create features for the international payment system which sees millions of transactions per day."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 100,
+    "fields": {
+      "blurb_list": 22,
+      "text": "Extend the reach of our platform APIs."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 23,
+    "fields": {
+      "job": 12,
+      "heading": "Requirements",
+      "body": "Our work is not just about the code: we seek a tech lead who cares deeply about user experience and how their work impacts users. An ideal candidate has extensive experience as a full-stack software engineer, including experience with both Django and React/Redux, our stack. This role is perfect for a seasoned full-stack developer who is looking to grow both as an engineer and technical product owner. We want someone who takes the initiative to learn, enjoys thoughtful code review, and has a history collaborating with other software engineers to develop best patterns and practices."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 23,
+    "fields": {
+      "blurb": 23,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 101,
+    "fields": {
+      "blurb_list": 23,
+      "text": "5-7 years of experience in infrastructure engineering of applications"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 102,
+    "fields": {
+      "blurb_list": 23,
+      "text": "Experience in web application security analysis and resolution."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 103,
+    "fields": {
+      "blurb_list": 23,
+      "text": "Experience working within a modern Javascript workflow through technologies such as: GitHub, CSS Preprocessors, Styled Components, Single Page Application frameworks and Module Bundlers (Webpack etc.)"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 104,
+    "fields": {
+      "blurb_list": 23,
+      "text": "Experience in implementing A/B Tests"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 105,
+    "fields": {
+      "blurb_list": 23,
+      "text": "Hands on experience with React/Redux in a production application"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 24,
+    "fields": {
+      "job": 12,
+      "heading": "Role",
+      "body": "Here's the role: sling code, architect new systems, mentor junior engineers, and manage product as a tech lead on Typemaster\u2019s growing dev team. You will work directly with Typemaster\u2019s two technical co-founders and other engineers in a culture that includes clean code, extensive testing, rapid iteration, and the values you bring to the table. You will come to own one of our product lines, and will have the ability to contribute to multiple projects."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 24,
+    "fields": {
+      "blurb": 24,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 106,
+    "fields": {
+      "blurb_list": 24,
+      "text": "Security audit of web application with an emphasis on commerce/transactional flows"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 107,
+    "fields": {
+      "blurb_list": 24,
+      "text": "Maintain and improve security skills, knowledge, and training through professional development, including participating in tech conferences and wider tech community forums"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 108,
+    "fields": {
+      "blurb_list": 24,
+      "text": "Work on a modern stack including React and Django."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 109,
+    "fields": {
+      "blurb_list": 24,
+      "text": "Enforce code quality through test driven development via unit tests and automated tests."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 25,
+    "fields": {
+      "job": 13,
+      "heading": "Requirements",
+      "body": "As a mid-level developer, we expect you to have a complete understanding of JavaScript, CSS, and HTML, and proven experience building and deploying single-page applications at scale. Experience with modern JavaScript application frameworks is a given, but you also have the ability to think outside the frameworks."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 25,
+    "fields": {
+      "blurb": 25,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 110,
+    "fields": {
+      "blurb_list": 25,
+      "text": "Multiple years of React experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 111,
+    "fields": {
+      "blurb_list": 25,
+      "text": "Good eye for detail"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 112,
+    "fields": {
+      "blurb_list": 25,
+      "text": "Passion for great user experience and API design"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 113,
+    "fields": {
+      "blurb_list": 25,
+      "text": "Comfortable working with cross-functional and cross-cultural teams"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 26,
+    "fields": {
+      "job": 13,
+      "heading": "Role",
+      "body": "We want people who are passionate about building apps that you and your peers will love. We are looking for an experienced Front-end Developer who shares our passion for making complex applications appear simple for our customers. We\u2019ll give you the freedom to do what you do best, so you should feel comfortable owning your work from start to finish, as well as bringing fresh ideas to the table that can make our products, development experience, and team better. You\u2019ll have the opportunity to work closely with designers, product managers, and other engineers across the stack to make ideas a reality."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 26,
+    "fields": {
+      "blurb": 26,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 114,
+    "fields": {
+      "blurb_list": 26,
+      "text": "Working with our team to build out our React/Typescript/GraphQL stack"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 115,
+    "fields": {
+      "blurb_list": 26,
+      "text": "Collaborating with product and design to increase conversions and improve user experience"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 116,
+    "fields": {
+      "blurb_list": 26,
+      "text": "Building new, efficient, and scalable front-end applications that will interface with public and internal APIs"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 117,
+    "fields": {
+      "blurb_list": 26,
+      "text": "Writing clean, maintainable, and testable code"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 118,
+    "fields": {
+      "blurb_list": 26,
+      "text": "Work with backend teams to solve complex problems"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 27,
+    "fields": {
+      "job": 14,
+      "heading": "Requirements",
+      "body": "This is an entry level full stack developer position that will assist in developing the next generation apps and APIs. You will be a contributor to agile teams by providing services that ensure Coffeeroasters is aligning technology efforts with business information needs. The intent is to develop a junior full stack developer to become a well-rounded API developer ready to take on any challenging opportunity."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 27,
+    "fields": {
+      "blurb": 27,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 119,
+    "fields": {
+      "blurb_list": 27,
+      "text": "A degree in Computer Science or an equivalent engineering foundation."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 120,
+    "fields": {
+      "blurb_list": 27,
+      "text": "Experience in Python and/or JavaScript."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 121,
+    "fields": {
+      "blurb_list": 27,
+      "text": "Ability to thrive in a fast-paced startup."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 122,
+    "fields": {
+      "blurb_list": 27,
+      "text": "Someone who loves to learn and is passionate about helping others."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 28,
+    "fields": {
+      "job": 14,
+      "heading": "Role",
+      "body": "We're looking for a dynamic individual who is no stranger to building well-designed, performant and effective front-end web applications that support complex business rules/flows. You will start by learning from the experiences of our current team and our current offerings and become intimately familiar with our codebase. You will leverage your experience to establish best practices for web development and drive the team and the codebase to a higher level."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 28,
+    "fields": {
+      "blurb": 28,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 123,
+    "fields": {
+      "blurb_list": 28,
+      "text": "Write frontend code and build UI to implement new features. Includes taking in data from our API, structuring that data, and displaying it."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 124,
+    "fields": {
+      "blurb_list": 28,
+      "text": "Build backend code for API."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 125,
+    "fields": {
+      "blurb_list": 28,
+      "text": "Consistently improve our platform so we can deliver features quickly with high reliability and scalability."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 126,
+    "fields": {
+      "blurb_list": 28,
+      "text": "Apply user experience methodology and best practices to translate user needs and business requirements into engaging user-centered design."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 127,
+    "fields": {
+      "blurb_list": 28,
+      "text": "Write/maintain documentation for the client and other team members."
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 29,
+    "fields": {
+      "job": 15,
+      "heading": "Requirements",
+      "body": "You will be responsible for writing and debugging your code while writing your own unit tests. We are looking for self-motivated developers who are interested in learning and can quickly pick up new technologies. We\u2019re a relatively small team in a stable yet fast growing company and would love for you to join us."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 29,
+    "fields": {
+      "blurb": 29,
+      "type": "UL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 128,
+    "fields": {
+      "blurb_list": 29,
+      "text": "Experience in JavaScript software development, preferably in a product company"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 129,
+    "fields": {
+      "blurb_list": 29,
+      "text": "Experience with React and state management libraries (such as Redux or Mobx)"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 130,
+    "fields": {
+      "blurb_list": 29,
+      "text": "Understand cross-browser compatibility issues and ways to work around them."
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 131,
+    "fields": {
+      "blurb_list": 29,
+      "text": "English language fluency, excellent communication skills"
+    }
+  },
+  {
+    "model": "app.Blurb",
+    "pk": 30,
+    "fields": {
+      "job": 15,
+      "heading": "Role",
+      "body": "In this role, you are part of our Product team comprised of Frontend & Backend Developers, UX & UI Specialists and Product Owners. You'll work on mission critical projects from the first day on, support other engineers, share your knowledge with your colleagues, and contribute to agile projects."
+    }
+  },
+  {
+    "model": "app.BlurbList",
+    "pk": 30,
+    "fields": {
+      "blurb": 30,
+      "type": "OL"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 132,
+    "fields": {
+      "blurb_list": 30,
+      "text": "Help define our software engineering culture"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 133,
+    "fields": {
+      "blurb_list": 30,
+      "text": "Write high quality software for the frontend"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 134,
+    "fields": {
+      "blurb_list": 30,
+      "text": "Do code reviews"
+    }
+  },
+  {
+    "model": "app.BlurbListItem",
+    "pk": 135,
+    "fields": {
+      "blurb_list": 30,
+      "text": "Proactively solve the problems most important to the business"
+    }
+  }
+]

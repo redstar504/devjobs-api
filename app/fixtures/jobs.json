@@ -1,0 +1,182 @@
+[
+  {
+    "model": "app.Job",
+    "pk": 1,
+    "fields": {
+      "company": 1,
+      "title": "Senior Software Engineer",
+      "contract_type": "FT",
+      "description": "Scoot is looking for a Senior Software Engineer passionate about building approachable, innovative and user-first experiences to join our small but growing Engineering team. You will be responsible for building and maintaining front end functionality across all of Scoot\u2019s applications, fostering a growing team of software engineers, and helping drive and maintain best software patterns and practices in our codebase.",
+      "location": "United Kingdom",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 2,
+    "fields": {
+      "company": 2,
+      "title": "Haskell and PureScript Dev",
+      "contract_type": "PT",
+      "description": "Blogr is looking for a part-time developer to join our six-strong team of full-stack engineers. Our core development values are strong, static typing and correctness, rigorous automation (in both testing and infrastructure) and everyone having a say.",
+      "location": "United States",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 3,
+    "fields": {
+      "company": 3,
+      "title": "Midlevel Back End Engineer",
+      "contract_type": "PT",
+      "description": "We are looking for a Mid-level Back End Engineer to join our growing software engineering organization. The right person will help move our platform to the next level. You\u2019ll be working as part of a skilled, collaborative team to jointly design and implement high visibility applications.",
+      "location": "Russia",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 4,
+    "fields": {
+      "company": 4,
+      "title": "Senior Application Engineer",
+      "contract_type": "FT",
+      "description": "Office Lite is seeking a talented and enthusiastic Senior Application Engineer whose primary responsibility is software architecture and development for Office Lite systems. Additional responsibilities include participation in project time/task estimation, code and architecture reviews, providing support for junior developers, documentation of system architecture and a supporting role for all phases of the development life-cycle (project definition, process mapping, architecture, coding, acceptance testing, installation, turnover to support, etc.).",
+      "location": "Japan",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 5,
+    "fields": {
+      "company": 5,
+      "title": "Remote DevOps Engineer",
+      "contract_type": "PT",
+      "description": "Join our dynamic team in developing Pod\u2019s core products and supporting infrastructure. Our software is currently written in Java, VB.Net, React Native, React JS and others. You will help lead new initiatives to build and improve the testing, staging and deployment solutions. You will interact with all development teams, development leadership and our hosting/IT staff to define requirements and goals for the Dev Ops Platform.",
+      "location": "Japan",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 6,
+    "fields": {
+      "company": 6,
+      "title": "Desktop Support Manager",
+      "contract_type": "PT",
+      "description": "Creative is seeking a Desktop Support Manager responsible for managing and leading a high-performance team in a dynamic environment. The ideal candidate should have management experience, a strong technical skillset, exceptional client service skills and enjoy mentoring a team.",
+      "location": "Germany",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 7,
+    "fields": {
+      "company": 7,
+      "title": "iOS Engineer",
+      "contract_type": "FT",
+      "description": "We are looking for thoughtful, well-rounded iOS engineer to join our team. We\u2019re looking for someone to help build out the foundation of the app and infrastructure. If you are interested in taking part in building an application that millions of people use every day to increase their productivity, this is the perfect opportunity. You will play an important part in our mobile engineering practice, implementing new features, improving performance, and building beautiful user interfaces.",
+      "location": "United States",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 8,
+    "fields": {
+      "company": 8,
+      "title": "Senior EJB Developer",
+      "contract_type": "FT",
+      "description": "We are seeking an experienced EJB Developer who will join our fast-growing engineering team, working on mission-critical applications. Searching for a Senior Java Developer who thrives on working with enterprises in multiple industries with unique business challenges requiring sophisticated solution design.",
+      "location": "United Kingdom",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 9,
+    "fields": {
+      "company": 9,
+      "title": "Senior Frontend Developer",
+      "contract_type": "PT",
+      "description": "We\u2019re looking for an experienced Frontend Developer with an eye for Product Design along with a honed set of coding skills and who shares our values around technology. Most importantly, we\u2019d like someone who is collaborative and can work closely with the rest of our team shaping product.",
+      "location": "Singapore",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 10,
+    "fields": {
+      "company": 10,
+      "title": "App & Website Designer",
+      "contract_type": "FR",
+      "description": "Mastercraft is looking for a UX/UI Designer to turn our software into easy-to-use products for our clients. Responsibilities include gathering user requirements, designing graphic elements and building software component",
+      "location": "United States",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 11,
+    "fields": {
+      "company": 11,
+      "title": "Fullstack Developer",
+      "contract_type": "PT",
+      "description": "Crowdfund is currently expanding and working on revolutionizing the world of raising funds for any project \u2013 creative, entrepreneurial or cause-related. Come and join us in this growth! We are looking for an exceptionally talented Fullstack Developer who will become an integral part of the company\u2019s exciting new chapter.",
+      "location": "New Zealand",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 12,
+    "fields": {
+      "company": 12,
+      "title": "Technical Lead Engineer",
+      "contract_type": "PT",
+      "description": "We are looking for a talented tech lead to join a team that creates large-scale, highly-performant web applications. This team creates highly visible and responsive user interfaces used by millions of people.",
+      "location": "United Kingdom",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 13,
+    "fields": {
+      "company": 13,
+      "title": "Front-end Developer",
+      "contract_type": "FT",
+      "description": "We\u2019re hiring a Front-end Developer to help create the front-end experience for Crowdfund\u2019s management interface. As our ideal candidate, you\u2019re an adept user of the front-end stack (React, Yarn, webpack, Babel, SCSS, JSX, GraphQL) and an avid learner of new frameworks. You enjoy building excellent user experiences as well as reusable components that other developers can use to solve similar problems. You love open-source and being part of a thriving developer community and understand that strong businesses enable great enduring communities.",
+      "location": "New Zealand",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 14,
+    "fields": {
+      "company": 14,
+      "title": "Junior Full-Stack Developer",
+      "contract_type": "FT",
+      "description": "We\u2019re looking for a Junior Full-Stack Developer to join our Product and Engineering team. This is an exciting opportunity to work on building our core web application.",
+      "location": "Singapore",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  },
+  {
+    "model": "app.Job",
+    "pk": 15,
+    "fields": {
+      "company": 15,
+      "title": "Midweight Front-end Developer",
+      "contract_type": "FT",
+      "description": "We\u2019re looking for a Frontend Developer who values user experience, performance and accessibility. Through our enduring interest in how people use our products, Blogr embraces a model of software development that is iterative and gradual. Like high-performance engines, our products are built through a process of continuous refinement (usually on two week release cycles). We\u2019re looking for someone who is comfortable embodying this approach.",
+      "location": "United States",
+      "post_date": "2024-01-11T19:13+0000"
+    }
+  }
+]

@@ -7,7 +7,7 @@ class Company(models.Model):
     logo = models.CharField(max_length=255)
     color = models.CharField(max_length=255)
     website = models.CharField(max_length=255)
-    join_date = models.DateTimeField(auto_now=True)
+    join_date = models.DateTimeField(auto_now_add=True)
 
 
 class Job(models.Model):
@@ -31,13 +31,9 @@ class Job(models.Model):
 
 class Blurb(models.Model):
     job = models.ForeignKey("Job", on_delete=models.CASCADE)
-    text = models.TextField(blank=True)
+    heading = models.TextField(blank=True)
+    body = models.TextField(blank=True)
     order = models.IntegerField(null=True)
-
-
-class BlurbHeading(models.Model):
-    blurb = models.ForeignKey("Blurb", on_delete=models.CASCADE)
-    text = models.TextField()
 
 
 class BlurbList(models.Model):
@@ -45,9 +41,8 @@ class BlurbList(models.Model):
         ("OL", "Ordered List"),
         ("UL", "Unordered List"),
     ]
-
-    heading = models.ForeignKey("Blurb", on_delete=models.CASCADE)
     type = models.CharField(choices=LIST_TYPES, max_length=60)
+    blurb = models.ForeignKey("Blurb", on_delete=models.CASCADE)
 
 
 class BlurbListItem(models.Model):
