@@ -1,10 +1,14 @@
+from rest_framework.relations import PrimaryKeyRelatedField
 from rest_framework.serializers import ModelSerializer
 
-from app.models import Job
+from app.models import Job, Company
+from app.serializers.company_serializer import CompanySerializer
 
 
 class JobSerializer(ModelSerializer):
+    company_detail = CompanySerializer(source='company', read_only=True)
+    company = PrimaryKeyRelatedField(queryset=Company.objects.all(), write_only=True)
+
     class Meta:
         model = Job
-        fields = ['id', 'company', 'title', 'description', 'location', 'contract_type']
-        depth = 1
+        fields = ['id', 'company', 'company_detail', 'title', 'description', 'location', 'contract_type']

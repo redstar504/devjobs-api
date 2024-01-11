@@ -16,6 +16,7 @@ dj-database-url = "^2.1.0"
 
 [tool.poetry.group.dev.dependencies]
 httpie = "^3.2.2"
+faker = "^22.2.0"
 
 [build-system]
 requires = ["poetry-core"]
