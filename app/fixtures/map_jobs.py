@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from app.fixtures.job_descriptions.convert import get_markdown_for_job
+from app.fixtures.fixture_util import get_html_description
 
 CONTRACT_TYPES = [
     ("FT", "Full Time"),
@@ -35,7 +35,7 @@ for job in data:
             "company": job["id"],
             "title": job["position"],
             "contract_type": get_contract_type(job["contract"]),
-            "description": get_markdown_for_job(1),
+            "description": get_html_description(job),
             "location": job["location"],
             "post_date": time
         }
