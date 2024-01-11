@@ -30,7 +30,7 @@ class Job(models.Model):
 
 
 class Blurb(models.Model):
-    job = models.ForeignKey("Job", on_delete=models.CASCADE)
+    job = models.ForeignKey("Job", on_delete=models.CASCADE, related_name="blurbs")
     heading = models.TextField(blank=True)
     body = models.TextField(blank=True)
     order = models.IntegerField(null=True)
@@ -42,10 +42,10 @@ class BlurbList(models.Model):
         ("UL", "Unordered List"),
     ]
     type = models.CharField(choices=LIST_TYPES, max_length=60)
-    blurb = models.ForeignKey("Blurb", on_delete=models.CASCADE)
+    blurb = models.ForeignKey("Blurb", on_delete=models.CASCADE, related_name='lists')
 
 
 class BlurbListItem(models.Model):
-    blurb_list = models.ForeignKey("BlurbList", on_delete=models.CASCADE)
+    blurb_list = models.ForeignKey("BlurbList", on_delete=models.CASCADE, related_name='items')
     text = models.TextField()
     order = models.IntegerField(null=True)
