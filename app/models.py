@@ -27,25 +27,3 @@ class Job(models.Model):
 
     class Meta:
         ordering = ['title']
-
-
-class Blurb(models.Model):
-    job = models.ForeignKey("Job", on_delete=models.CASCADE, related_name="blurbs")
-    heading = models.TextField(blank=True)
-    body = models.TextField(blank=True)
-    order = models.IntegerField(null=True)
-
-
-class BlurbList(models.Model):
-    LIST_TYPES = [
-        ("OL", "Ordered List"),
-        ("UL", "Unordered List"),
-    ]
-    type = models.CharField(choices=LIST_TYPES, max_length=60)
-    blurb = models.ForeignKey("Blurb", on_delete=models.CASCADE, related_name='lists')
-
-
-class BlurbListItem(models.Model):
-    blurb_list = models.ForeignKey("BlurbList", on_delete=models.CASCADE, related_name='items')
-    text = models.TextField()
-    order = models.IntegerField(null=True)

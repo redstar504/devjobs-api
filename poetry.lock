@@ -287,6 +287,21 @@ files = [
 ]
 
 [[package]]
+name = "markdown"
+version = "3.5.2"
+description = "Python implementation of John Gruber's Markdown."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "Markdown-3.5.2-py3-none-any.whl", hash = "sha256:d43323865d89fc0cb9b20c75fc8ad313af307cc087e84b657d9eec768eddeadd"},
+    {file = "Markdown-3.5.2.tar.gz", hash = "sha256:e1ac7b3dc550ee80e602e71c1d168002f062e49f1b11e26a36264dafd4df2ef8"},
+]
+
+[package.extras]
+docs = ["mdx-gh-links (>=0.2)", "mkdocs (>=1.5)", "mkdocs-gen-files", "mkdocs-literate-nav", "mkdocs-nature (>=0.6)", "mkdocs-section-index", "mkdocstrings[python]"]
+testing = ["coverage", "pyyaml"]
+
+[[package]]
 name = "markdown-it-py"
 version = "3.0.0"
 description = "Python port of markdown-it. Markdown parsing, done right!"
@@ -697,4 +712,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5fc2ac0ddb9e11f1fe5a0c7a0034989d90e8fdbb46a87bc11c50e2a3dbdbfe48"
+content-hash = "c8d723461bdc24a6798ea92e4a0120384567165187d74771393e17c9807fb553"
