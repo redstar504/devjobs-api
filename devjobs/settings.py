@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
     "app.apps.AppConfig"
 ]
 
@@ -145,7 +146,7 @@ LOGGING = {
     "disable_existing_loggers": False,
     "handlers": {
         "file": {
-            "level": "DEBUG",
+            "level": "ERROR",
             "class": "logging.FileHandler",
             "filename": f'{BASE_DIR}/log/error.log'
         }
@@ -153,7 +154,7 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["file"],
-            "level": "DEBUG",
+            "level": "ERROR",
             "propagate": True,
         }
     }
