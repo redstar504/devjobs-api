@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
-from app.models import Company, Job, Blurb, BlurbList, BlurbListItem
+from app.models import Job, Blurb, BlurbList, BlurbListItem
 from app.util.model_factory import get_company, get_job
 
 fake = Faker()
@@ -53,7 +53,6 @@ class CompanyTestCase(APITestCase):
 
         self.assertEqual(len(data), 3)
         self.assertEqual(data[0]["company_detail"]["id"], job1.company.id)
-
 
     def test_job_details(self):
         job = get_job()
