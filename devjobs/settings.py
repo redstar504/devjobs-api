@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework",
     'corsheaders',
-    "app.apps.AppConfig"
+    "app.apps.AppConfig",
+    "django_extensions"
 ]
 
 MIDDLEWARE = [
@@ -62,8 +63,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://devjobs.icyloops.com",
-    "http://192.168.1.69:5173",
-    "http://localhost:5173"
+    "https://192.168.1.69:5173",
+    "https://localhost:5173"
 ]
 
 ROOT_URLCONF = 'devjobs.urls'
