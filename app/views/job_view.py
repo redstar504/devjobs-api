@@ -1,10 +1,15 @@
 from django.http import Http404
-from rest_framework import status
+from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from app.models import Job
 from app.serializers.job_serializer import JobSerializer, JobDetailSerializer
+
+
+class JobViewSet(viewsets.ModelViewSet):
+    queryset = Job.objects.all().order_by('id')
+    serializer_class = JobSerializer
 
 
 class JobList(APIView):

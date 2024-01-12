@@ -50,10 +50,11 @@ class JobTestCase(APITestCase):
         response = self.client.get(url, format="json")
         content = response.content.decode("utf-8")
         data = json.loads(content)
+        results = data["results"]
 
-        self.assertEqual(len(data), 3)
-        self.assertEqual(data[0]["company_detail"]["id"], job1.company.id)
-        self.assertIn("post_date", data[0])
+        self.assertEqual(len(results), 3)
+        self.assertEqual(results[0]["company_detail"]["id"], job1.company.id)
+        self.assertIn("post_date", results[0])
 
     def test_job_details(self):
         job = get_job()

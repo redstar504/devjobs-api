@@ -29,7 +29,6 @@ class CompanyTestCase(APITestCase):
         self.assertEqual(company.website, data["website"])
 
     def test_view_company(self):
-
         company = get_company()
         company.save()
 
@@ -43,4 +42,3 @@ class CompanyTestCase(APITestCase):
         self.assertEqual(data["logo"], company.logo)
         self.assertEqual(data["color"], company.color)
         self.assertEqual(data["website"], company.website)
-
