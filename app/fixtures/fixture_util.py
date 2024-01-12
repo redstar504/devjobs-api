@@ -4,13 +4,13 @@ import markdown
 def get_html_description(job):
     md = ""
     md += f'{job["description"]}\n\n'
-    md += "## Requirements\n\n"
+    md += "### Requirements\n\n"
     md += f'{job["requirements"]["content"]}\n\n'
 
     for item in job["requirements"]["items"]:
-        md += f'- {item}'
+        md += f'- {item}\n'
 
-    md += "\n\n## Role\n\n"
+    md += "\n\n### Role\n\n"
 
     md += f'{job["role"]["content"]}\n\n'
 
