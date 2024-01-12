@@ -9,7 +9,7 @@ from app.serializers.job_serializer import JobSerializer, JobDetailSerializer
 
 class JobList(APIView):
     def get(self, request, format=None):
-        jobs = Job.objects.all().order_by("id")
+        jobs = Job.objects.all().order_by("id")  # todo: order by date with tests
         serializer = JobSerializer(jobs, many=True)
         return Response(serializer.data)
 
