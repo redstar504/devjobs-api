@@ -53,6 +53,7 @@ class JobTestCase(APITestCase):
 
         self.assertEqual(len(data), 3)
         self.assertEqual(data[0]["company_detail"]["id"], job1.company.id)
+        self.assertIn("post_date", data[0])
 
     def test_job_details(self):
         job = get_job()
@@ -65,3 +66,4 @@ class JobTestCase(APITestCase):
         data = json.loads(content)
 
         self.assertEqual(data["title"], job.title)
+        self.assertIn("post_date", data)
