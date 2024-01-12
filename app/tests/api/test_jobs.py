@@ -11,7 +11,7 @@ from app.util.model_factory import get_company, get_job
 fake = Faker()
 
 
-class CompanyTestCase(APITestCase):
+class JobTestCase(APITestCase):
     def test_create_job(self):
         url = reverse("job-list")
 
