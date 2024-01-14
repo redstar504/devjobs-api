@@ -1,3 +1,4 @@
+from django.contrib.gis.geos import Point
 from faker import Faker
 
 from app.models import Company, Job
@@ -27,6 +28,7 @@ def get_job():
         "city": fake.city(),
         "country": fake.country(),
         "contract_type": Job.CONTRACT_TYPES[0][0],
+        "point": Point(119, 49)
     }
 
     return Job(**data)

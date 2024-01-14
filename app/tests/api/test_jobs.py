@@ -1,5 +1,6 @@
 import json
 
+from django.contrib.gis.geos import Point
 from faker import Faker
 from rest_framework import status
 from rest_framework.reverse import reverse
@@ -25,6 +26,7 @@ class JobTestCase(APITestCase):
             "city": fake.city(),
             "country": fake.country(),
             "contract_type": "PT",
+            "point": {"lat": "foo", "lng": "foo"}
         }
 
         response = self.client.post(url, data, format="json")
@@ -58,6 +60,16 @@ class JobTestCase(APITestCase):
         self.assertEqual(results[0]["company_detail"]["id"], job1.company.id)
         self.assertIn("post_date", results[0])
 
+
+    def test_jobs_in_radius(self):
+        job1 = get_job()
+        job2 = get_job()
+        job3 = get_job()
+
+        job1.save()
+        job2.save()
+        job3.save()
+
     def test_job_details(self):
         job = get_job()
         job.save()
@@ -70,3 +82,4 @@ class JobTestCase(APITestCase):
 
         self.assertEqual(data["title"], job.title)
         self.assertIn("post_date", data)
+

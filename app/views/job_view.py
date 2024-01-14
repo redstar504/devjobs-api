@@ -1,8 +1,11 @@
+import logging
+
 from django.http import Http404
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from app.logger import logger
 from app.models import Job
 from app.serializers.job_serializer import JobSerializer, JobDetailSerializer
 
@@ -11,20 +14,15 @@ class JobViewSet(viewsets.ModelViewSet):
     queryset = Job.objects.all().order_by('id')
     serializer_class = JobSerializer
 
+    def get_queryset(self):
+        queryset = Job.objects.all().order_by('id')
+        isFulltime = self.request.query_params.get('isFulltime', default="false")
 
-class JobList(APIView):
-    def get(self, request, format=None):
-        jobs = Job.objects.all().order_by("id")  # todo: order by date with tests
-        serializer = JobSerializer(jobs, many=True)
-        return Response(serializer.data)
+        if isFulltime == 'true':
+            logger.debug("[Job Listing] filtering on full time positions")
+            queryset = queryset.filter(contract_type="FT")
 
-    def post(self, request, format=None):
-        serializer = JobSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return queryset
 
 
 class JobDetail(APIView):
