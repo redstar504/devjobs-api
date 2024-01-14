@@ -352,6 +352,19 @@ files = [
 python-dateutil = ">=2.4"
 
 [[package]]
+name = "googlemaps"
+version = "4.10.0"
+description = "Python client library for Google Maps Platform"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "googlemaps-4.10.0.tar.gz", hash = "sha256:3055fcbb1aa262a9159b589b5e6af762b10e80634ae11c59495bd44867e47d88"},
+]
+
+[package.dependencies]
+requests = ">=2.20.0,<3.0"
+
+[[package]]
 name = "gunicorn"
 version = "21.2.0"
 description = "WSGI HTTP Server for UNIX"
@@ -950,4 +963,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "bb0cbc27bbfce93dfe8d356a616a4daa12d22c752fda3297694d3207a4543f97"
+content-hash = "1801d8634c50cb90daa9a0cd63d39794a17114802c2515c00c582a35524c5dc8"

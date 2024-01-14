@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.gis.db.models import PointField
 
 
 # Create your models here.
@@ -24,6 +25,7 @@ class Job(models.Model):
     city = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     contract_type = models.CharField(choices=CONTRACT_TYPES, max_length=60)
+    point = PointField()
     post_date = models.DateTimeField(auto_now=True)
 
     class Meta:
