@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'devjobs.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://devjobs:devjobs@localhost:5432/devjobs',
+        default='postgis://devjobs:devjobs@localhost:5432/devjobs',
         conn_max_age=600
     )
 }
