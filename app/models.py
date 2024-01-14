@@ -22,11 +22,16 @@ class JobManager(models.Manager):
 
 
 class Job(models.Model):
+    FULL_TIME = "FT"
+    PART_TIME = "PT"
+    CONTRACT = "CO"
+    FREELANCE = "FR"
+
     CONTRACT_TYPES = [
-        ("FT", "Full Time"),
-        ("PT", "Part Time"),
-        ("CO", "Contract"),
-        ("FR", "Freelance"),
+        (FULL_TIME, "Full Time"),
+        (PART_TIME, "Part Time"),
+        (CONTRACT, "Contract"),
+        (FREELANCE, "Freelance"),
     ]
 
     objects = JobManager()
@@ -37,7 +42,7 @@ class Job(models.Model):
     city = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     contract_type = models.CharField(choices=CONTRACT_TYPES, max_length=60)
-    point = PointField()
+    point = PointField(geography=True)
     post_date = models.DateTimeField(auto_now=True)
 
     class Meta:

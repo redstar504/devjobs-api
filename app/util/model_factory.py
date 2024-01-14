@@ -17,11 +17,11 @@ def get_company():
     return Company(**data)
 
 
-def get_job():
+def get_job(**args):
     company = get_company()
     company.save()
 
-    data = {
+    defaults = {
         "company": company,
         "title": fake.bs(),
         "description": fake.paragraph(),
@@ -31,4 +31,4 @@ def get_job():
         "point": Point(119, 49)
     }
 
-    return Job(**data)
+    return Job(**{**defaults, **args})

@@ -41,7 +41,7 @@ def run_mapping():
                 "description": get_html_description(job),
                 "city": job["city"],
                 "country": job["country"],
-                "point": f'POINT ({coords[1]} {coords[0]})',
+                "point": f'POINT ({coords[0]} {coords[1]})',
                 "post_date": time
             }
         })
