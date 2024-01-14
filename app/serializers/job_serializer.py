@@ -11,7 +11,8 @@ class JobSerializer(ModelSerializer):
 
     class Meta:
         model = Job
-        fields = ['id', 'company', 'company_detail', 'title', 'description', 'location', 'contract_type', 'post_date']
+        fields = ['id', 'company', 'company_detail', 'title', 'description', 'city', 'country', 'contract_type',
+                  'post_date']
 
 
 class JobDetailSerializer(ModelSerializer):
@@ -19,4 +20,4 @@ class JobDetailSerializer(ModelSerializer):
 
     class Meta:
         model = Job
-        fields = ['id', 'company_detail', 'title', 'description', 'location', 'contract_type', 'post_date']
+        fields = ['id', 'company_detail', 'title', 'description', 'city', 'country', 'contract_type', 'post_date']

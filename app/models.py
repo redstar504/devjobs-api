@@ -21,7 +21,8 @@ class Job(models.Model):
     company = models.ForeignKey("Company", on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
-    location = models.CharField(max_length=255)  # todo: possibly expand on this later
+    city = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
     contract_type = models.CharField(choices=CONTRACT_TYPES, max_length=60)
     post_date = models.DateTimeField(auto_now=True)
 

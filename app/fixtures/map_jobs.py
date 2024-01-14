@@ -36,7 +36,8 @@ for job in data:
             "title": job["position"],
             "contract_type": get_contract_type(job["contract"]),
             "description": get_html_description(job),
-            "location": job["location"],
+            "city": job["city"],
+            "country": job["country"],
             "post_date": time
         }
     })

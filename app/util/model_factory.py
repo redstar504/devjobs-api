@@ -24,7 +24,8 @@ def get_job():
         "company": company,
         "title": fake.bs(),
         "description": fake.paragraph(),
-        "location": fake.city(),
+        "city": fake.city(),
+        "country": fake.country(),
         "contract_type": Job.CONTRACT_TYPES[0][0],
     }
 

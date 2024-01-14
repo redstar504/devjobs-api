@@ -22,7 +22,8 @@ class JobTestCase(APITestCase):
             "company": company.id,
             "title": fake.company(),
             "description": fake.paragraph(5),
-            "location": fake.city(),
+            "city": fake.city(),
+            "country": fake.country(),
             "contract_type": "PT",
         }
 
@@ -33,7 +34,8 @@ class JobTestCase(APITestCase):
         self.assertEqual(job.company.id, company.id)
         self.assertEqual(job.title, data["title"])
         self.assertEqual(job.description, data["description"])
-        self.assertEqual(job.location, data["location"])
+        self.assertEqual(job.city, data["city"])
+        self.assertEqual(job.country, data["country"])
         self.assertEqual(job.contract_type, data["contract_type"])
 
     def test_list_jobs(self):
