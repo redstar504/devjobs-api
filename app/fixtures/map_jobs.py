@@ -12,15 +12,6 @@ CONTRACT_TYPES = [
     ("FR", "Freelance"),
 ]
 
-path = Path('raw.json')
-contents = path.read_text()
-data = json.loads(contents)
-
-jobs = []
-
-dt = datetime.now(timezone.utc)
-time = dt.strftime("%Y-%m-%dT%H:%M%z")
-
 
 def get_contract_type(long):
     for contract_type in CONTRACT_TYPES:
@@ -28,23 +19,33 @@ def get_contract_type(long):
             return contract_type[0]
 
 
-for job in data:
-    coords = coordinates_from_city_country(job["city"], job["country"])
-    jobs.append({
-        "model": "app.Job",
-        "pk": job["id"],
-        "fields": {
-            "company": job["id"],
-            "title": job["position"],
-            "contract_type": get_contract_type(job["contract"]),
-            "description": get_html_description(job),
-            "city": job["city"],
-            "country": job["country"],
-            "point": f'POINT ({coords[1]} {coords[0]})',
-            "post_date": time
-        }
-    })
+def run_mapping():
+    path = Path(__file__).parent / 'raw.json'
+    contents = path.read_text()
+    data = json.loads(contents)
 
-dump = json.dumps(jobs)
-dumpPath = Path('jobs.json')
-dumpPath.write_text(dump)
+    jobs = []
+
+    dt = datetime.now(timezone.utc)
+    time = dt.strftime("%Y-%m-%dT%H:%M%z")
+
+    for job in data:
+        coords = coordinates_from_city_country(job["city"], job["country"])
+        jobs.append({
+            "model": "app.Job",
+            "pk": job["id"],
+            "fields": {
+                "company": job["id"],
+                "title": job["position"],
+                "contract_type": get_contract_type(job["contract"]),
+                "description": get_html_description(job),
+                "city": job["city"],
+                "country": job["country"],
+                "point": f'POINT ({coords[1]} {coords[0]})',
+                "post_date": time
+            }
+        })
+
+    dump = json.dumps(jobs)
+    dump_path = Path(__file__).parent / 'jobs.json'
+    dump_path.write_text(dump)

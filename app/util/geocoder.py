@@ -1,6 +1,7 @@
 import googlemaps
+from django.conf import settings
 
-gmaps = googlemaps.Client(key='AIzaSyAVrYTZpKroI1W7ZOsxKyRiCoUR6DGHfXU')
+gmaps = googlemaps.Client(settings.GMAPS_API_KEY)
 
 
 def coordinates_from_place_id(place_id):
@@ -13,6 +14,3 @@ def coordinates_from_city_country(city, country):
     res = gmaps.geocode(f'{city}, {country}')
     loc = res[0]["geometry"]["location"]
     return loc["lat"], loc["lng"]
-
-
-print(coordinates_from_place_id('ChIJufI-cg9EXj4RCBGXQZMuzMc'))
