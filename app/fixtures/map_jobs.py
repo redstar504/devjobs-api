@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from app.fixtures.fixture_util import get_html_description
+from app.util.geocoder import coordinates_from_city_country
 
 CONTRACT_TYPES = [
     ("FT", "Full Time"),
@@ -28,6 +29,7 @@ def get_contract_type(long):
 
 
 for job in data:
+    coords = coordinates_from_city_country(job["city"], job["country"])
     jobs.append({
         "model": "app.Job",
         "pk": job["id"],
@@ -38,6 +40,7 @@ for job in data:
             "description": get_html_description(job),
             "city": job["city"],
             "country": job["country"],
+            "point": f'POINT ({coords[1]} {coords[0]})',
             "post_date": time
         }
     })
