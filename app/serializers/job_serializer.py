@@ -17,7 +17,7 @@ class JobSerializer(ModelSerializer):
 
     def get_distance(self, obj):
         distance = getattr(obj, 'distance', None)
-        return distance.km if distance else None
+        return round(distance.km) if distance else None
 
     class Meta:
         model = Job
