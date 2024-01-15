@@ -1,5 +1,7 @@
 from django.core.management import BaseCommand
+
 from app.fixtures import map_companies, map_jobs
+
 
 class Command(BaseCommand):
     help = 'Maps the raw.json file provided by FM to loadable fixture data'

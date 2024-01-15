@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -32,7 +31,9 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
                 ('city', models.CharField(max_length=255)),
                 ('country', models.CharField(max_length=255)),
-                ('contract_type', models.CharField(choices=[('FT', 'Full Time'), ('PT', 'Part Time'), ('CO', 'Contract'), ('FR', 'Freelance')], max_length=60)),
+                ('contract_type', models.CharField(
+                    choices=[('FT', 'Full Time'), ('PT', 'Part Time'), ('CO', 'Contract'), ('FR', 'Freelance')],
+                    max_length=60)),
                 ('point', django.contrib.gis.db.models.fields.PointField(geography=True, srid=4326)),
                 ('post_date', models.DateTimeField(auto_now=True)),
                 ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='app.company')),

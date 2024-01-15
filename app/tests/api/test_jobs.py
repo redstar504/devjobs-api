@@ -5,7 +5,6 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
-from app.logger import logger
 from app.models import Job
 from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_munich
 from app.util.model_factory import get_company, get_job
@@ -99,7 +98,6 @@ class JobTestCase(APITestCase):
 
         # Only one job within 1000 km of munich
         self.assertEqual(1, data["count"])
-
 
     def test_job_details(self):
         job = get_job()

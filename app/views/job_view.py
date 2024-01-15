@@ -1,5 +1,6 @@
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
+from django.contrib.gis.measure import D
 from django.http import Http404
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -30,9 +31,11 @@ class JobViewSet(viewsets.ModelViewSet):
             radius = self.request.query_params.get('radius', default=1000)
             search_coords = coordinates_from_place_id(place_id)
             search_point = Point(search_coords[0], search_coords[1], srid=4326)
-            queryset = (queryset
-                        .annotate(distance=Distance("point", search_point))
-                        .filter(distance__lte=int(radius) * 100))
+            queryset = (
+                queryset.annotate(distance=Distance("point", search_point))
+                .filter(distance__lte=D(km=int(radius)))
+                .order_by("distance")
+            )
 
         return queryset
 

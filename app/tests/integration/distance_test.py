@@ -1,6 +1,5 @@
 from django.test import TransactionTestCase
 
-from app.logger import logger
 from app.util.fake_points import *
 from app.util.geography import km_between_points, km_between_place_and_point
 
