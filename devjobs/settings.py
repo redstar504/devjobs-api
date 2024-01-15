@@ -16,14 +16,16 @@ from pathlib import Path
 import dj_database_url
 import environ
 
+from app.logger import logger
+
 env = environ.Env(
-    USE_GMAPS_MOCKS=(bool, False)
+    USE_GMAPS_MOCKS=(bool, False),
+    GMAPS_API_KEY=(str, '')
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(BASE_DIR / '.env')
 
 GMAPS_API_KEY = env('GMAPS_API_KEY')
 USE_GMAPS_MOCKS = env('USE_GMAPS_MOCKS')
@@ -154,51 +156,51 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "file": {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": f'{BASE_DIR}/log/error.log'
-        }
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["file"],
-            "level": "ERROR",
-            "propagate": True,
-        }
-    }
-}
-
 # LOGGING = {
 #     "version": 1,
 #     "disable_existing_loggers": False,
 #     "handlers": {
-#         "console": {
-#             "class": "logging.StreamHandler",
-#         },
 #         "file": {
+#             "level": "ERROR",
 #             "class": "logging.FileHandler",
-#             "filename": "/tmp/debug.log",
-#             "formatter": "app_logger_formatter",
-#         },
+#             "filename": f'{BASE_DIR}/log/error.log'
+#         }
 #     },
 #     "loggers": {
-#         "app.logger": {
+#         "django": {
 #             "handlers": ["file"],
-#             "level": "DEBUG",
-#             "propagate": False,
-#         },
-#     },
-#     "formatters": {
-#         "app_logger_formatter": {
-#             "format": "%(filename)s:%(lineno)d - %(message)s",
-#         },
-#     },
+#             "level": "ERROR",
+#             "propagate": True,
+#         }
+#     }
 # }
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        "file": {
+            "class": "logging.FileHandler",
+            "filename": f'{BASE_DIR}/log/debug.log',
+            "formatter": "app_logger_formatter",
+        },
+    },
+    "loggers": {
+        "app.logger": {
+            "handlers": ["file"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+    "formatters": {
+        "app_logger_formatter": {
+            "format": "%(filename)s:%(lineno)d - %(message)s",
+        },
+    },
+}
 
 
 REST_FRAMEWORK = {

@@ -6,7 +6,7 @@ from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
 from app.models import Job
-from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_munich
+from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_munich, place_id_of_moscow
 from app.util.model_factory import get_company, get_job
 
 fake = Faker()
@@ -31,8 +31,10 @@ class JobTestCase(APITestCase):
 
         response = self.client.post(url, data, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
 
-        job = Job.objects.get(pk=1)
+        job = Job.objects.get(pk=data["id"])
         self.assertEqual(job.company.id, company.id)
         self.assertEqual(job.title, data["title"])
         self.assertEqual(job.description, data["description"])
@@ -57,6 +59,7 @@ class JobTestCase(APITestCase):
         results = data["results"]
 
         self.assertEqual(len(results), 3)
+        self.assertEqual(results[0]["id"], job1.id, "Job ID should match")
         self.assertEqual(results[0]["company_detail"]["id"], job1.company.id)
         self.assertIn("post_date", results[0])
 
@@ -83,21 +86,23 @@ class JobTestCase(APITestCase):
         self.assertEqual(3, data["count"])
 
     def test_jobs_in_radius(self):
-        job1 = get_job(point=point_of_munich())
-        job2 = get_job(point=point_of_moscow())
-        job3 = get_job(point=point_of_moscow())
+        get_job(point=point_of_munich()).save()
+        get_job(point=point_of_munich()).save()
+        get_job(point=point_of_munich()).save()
 
-        job1.save()
-        job2.save()
-        job3.save()
+        get_job(point=point_of_moscow()).save()
+        get_job(point=point_of_moscow()).save()
+        get_job(point=point_of_moscow()).save()
+        get_job(point=point_of_moscow()).save()
+        get_job(point=point_of_moscow()).save()
 
-        url = f'{reverse("job-list")}?placeId={place_id_of_munich()}&radius=1000'
+        url = f'{reverse("job-list")}?placeId={place_id_of_moscow()}&radius=1000'
         response = self.client.get(url, format="json")
         content = response.content.decode("utf-8")
         data = json.loads(content)
 
-        # Only one job within 1000 km of munich
-        self.assertEqual(1, data["count"])
+        # Five jobs saved that are located in Moscow
+        self.assertEqual(5, data["count"])
 
     def test_job_details(self):
         job = get_job()

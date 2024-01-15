@@ -17,7 +17,7 @@ class JobViewSet(viewsets.ModelViewSet):
     serializer_class = JobSerializer
 
     def get_queryset(self):
-        queryset = Job.objects.all()
+        queryset = Job.objects.all().order_by('id')
         full_time_only = self.request.query_params.get('fullTimeOnly', default="false")
 
         if full_time_only == 'true':

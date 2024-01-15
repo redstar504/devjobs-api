@@ -20,9 +20,12 @@ class CompanyTestCase(APITestCase):
         }
 
         response = self.client.post(url, data, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        company = Company.objects.get(pk=1)
+        company = Company.objects.get(pk=data["id"])
         self.assertEqual(company.name, data["name"])
         self.assertEqual(company.logo, data["logo"])
         self.assertEqual(company.color, data["color"])
