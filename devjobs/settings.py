@@ -151,51 +151,51 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LOGGING = {
-#     "version": 1,
-#     "disable_existing_loggers": False,
-#     "handlers": {
-#         "file": {
-#             "level": "ERROR",
-#             "class": "logging.FileHandler",
-#             "filename": f'{BASE_DIR}/log/error.log'
-#         }
-#     },
-#     "loggers": {
-#         "django": {
-#             "handlers": ["file"],
-#             "level": "ERROR",
-#             "propagate": True,
-#         }
-#     }
-# }
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-        },
         "file": {
+            "level": "ERROR",
             "class": "logging.FileHandler",
-            "filename": "/tmp/debug.log",
-            "formatter": "app_logger_formatter",
-        },
+            "filename": f'{BASE_DIR}/log/error.log'
+        }
     },
     "loggers": {
-        "app.logger": {
+        "django": {
             "handlers": ["file"],
-            "level": "DEBUG",
-            "propagate": False,
-        },
-    },
-    "formatters": {
-        "app_logger_formatter": {
-            "format": "%(filename)s:%(lineno)d - %(message)s",
-        },
-    },
+            "level": "ERROR",
+            "propagate": True,
+        }
+    }
 }
+
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "handlers": {
+#         "console": {
+#             "class": "logging.StreamHandler",
+#         },
+#         "file": {
+#             "class": "logging.FileHandler",
+#             "filename": "/tmp/debug.log",
+#             "formatter": "app_logger_formatter",
+#         },
+#     },
+#     "loggers": {
+#         "app.logger": {
+#             "handlers": ["file"],
+#             "level": "DEBUG",
+#             "propagate": False,
+#         },
+#     },
+#     "formatters": {
+#         "app_logger_formatter": {
+#             "format": "%(filename)s:%(lineno)d - %(message)s",
+#         },
+#     },
+# }
 
 
 REST_FRAMEWORK = {
