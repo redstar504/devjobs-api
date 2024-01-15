@@ -6,11 +6,10 @@ from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
 from app.models import Job
-from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_munich, place_id_of_moscow
+from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_moscow
 from app.util.model_factory import get_company, get_job
 
 fake = Faker()
-
 
 class JobTestCase(APITestCase):
     def test_create_job(self):
@@ -63,7 +62,21 @@ class JobTestCase(APITestCase):
         self.assertEqual(results[0]["company_detail"]["id"], job1.company.id)
         self.assertIn("post_date", results[0])
 
-    def test_list_full_time_jobs(self):
+    def test_job_details(self):
+        job = get_job()
+        job.save()
+
+        url = reverse("job-details", kwargs={'pk': job.id})
+
+        response = self.client.get(url, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
+        self.assertEqual(data["title"], job.title)
+        self.assertIn("post_date", data)
+
+class JobSearchTestCase(APITestCase):
+    def test_search_full_time_jobs(self):
         url = f'{reverse("job-list")}?fullTimeOnly=true'
 
         job1 = get_job(contract_type=Job.FULL_TIME)
@@ -85,7 +98,7 @@ class JobTestCase(APITestCase):
         # Should only be 3 full time jobs returned
         self.assertEqual(3, data["count"])
 
-    def test_jobs_in_radius(self):
+    def test_search_by_place_id_in_radius(self):
         get_job(point=point_of_munich()).save()
         get_job(point=point_of_munich()).save()
         get_job(point=point_of_munich()).save()
@@ -101,18 +114,24 @@ class JobTestCase(APITestCase):
         content = response.content.decode("utf-8")
         data = json.loads(content)
 
-        # Five jobs saved that are located in Moscow
-        self.assertEqual(5, data["count"])
+        self.assertEqual(5, data["count"], 'Five jobs saved that are located in Moscow')
 
-    def test_job_details(self):
-        job = get_job()
-        job.save()
+    def test_search_job_keywords(self):
+        get_job(title="Senior Software Engineer").save()
+        get_job(title="Haskell and PureScript Dev").save()
+        get_job(title="Midlevel Back End ENGINEER").save()  # Uppercase variant
 
-        url = reverse("job-details", kwargs={'pk': job.id})
+        get_job(title="Senior Application Dev").save()
+        get_job(title="Remote DevOps EnginEering").save()  # Note the suffix "ing"
+        get_job(title="Desktop Support Manager").save()
+        get_job(title="iOS Engineer").save()
+        get_job(title="Senior EJB Developer").save()
 
+        get_job(description="foo bar baz engineer blah blah").save()  # job description keyword inclusion
+
+        url = f'{reverse("job-list")}?keywords=Engineering'
         response = self.client.get(url, format="json")
         content = response.content.decode("utf-8")
         data = json.loads(content)
 
-        self.assertEqual(data["title"], job.title)
-        self.assertIn("post_date", data)
+        self.assertEqual(5, data["count"], 'Five jobs mentioning engineering')

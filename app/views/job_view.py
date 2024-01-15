@@ -1,6 +1,8 @@
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
+from django.contrib.postgres.lookups import SearchLookup
+from django.contrib.postgres.search import SearchVector
 from django.http import Http404
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -10,7 +12,7 @@ from app.logger import logger
 from app.models import Job
 from app.serializers.job_serializer import JobSerializer, JobDetailSerializer
 from app.util.geocoder import coordinates_from_place_id
-
+from django.db.models import CharField
 
 class JobViewSet(viewsets.ModelViewSet):
     queryset = Job.objects.all().order_by('id')
@@ -18,9 +20,16 @@ class JobViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Job.objects.all().order_by('id')
-        full_time_only = self.request.query_params.get('fullTimeOnly', default="false")
+        full_time_only = self.request.query_params.get('fullTimeOnly', default=None)
+        keywords = self.request.query_params.get('keywords', default=None)
 
-        if full_time_only == 'true':
+        if keywords is not None:
+            CharField.register_lookup(SearchLookup)
+            queryset = queryset.annotate(
+                search=SearchVector("title", "description")
+            ).filter(search=keywords)
+
+        if full_time_only is not None:
             logger.debug("[Job Listing] filtering on full time positions")
             queryset = queryset.filter(contract_type="FT")
 
