@@ -12,7 +12,7 @@ use_mocks = settings.USE_GMAPS_MOCKS
 
 def coordinates_from_place_id(place_id):
     if use_mocks:
-        logger.debug("[Geocoder Mocks] Returning coordinates of moscow.")
+        logger.debug("[GeoMocks] providing coordinates of moscow.")
         return coords_of_moscow()
     else:
         geocode_result = gmaps.geocode(place_id=place_id)
@@ -22,7 +22,7 @@ def coordinates_from_place_id(place_id):
 
 def coordinates_from_city_country(city, country):
     if use_mocks:
-        logger.debug("[Geocoder Mocks] Returning coordinates of munich.")
+        logger.debug("[GeoMocks] providing coordinates of munich.")
         return coords_of_munich()
     else:
         res = gmaps.geocode(f'{city}, {country}')

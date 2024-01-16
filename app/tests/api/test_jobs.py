@@ -5,11 +5,13 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
+from app.logger import logger
 from app.models import Job
-from app.util.fake_points import point_of_munich, point_of_moscow, place_id_of_moscow
+from app.util.fake_points import *
 from app.util.model_factory import get_company, get_job
 
 fake = Faker()
+
 
 class JobTestCase(APITestCase):
     def test_create_job(self):
@@ -75,6 +77,7 @@ class JobTestCase(APITestCase):
         self.assertEqual(data["title"], job.title)
         self.assertIn("post_date", data)
 
+
 class JobSearchTestCase(APITestCase):
     def test_search_full_time_jobs(self):
         url = f'{reverse("job-list")}?fullTimeOnly=true'
@@ -115,6 +118,36 @@ class JobSearchTestCase(APITestCase):
         data = json.loads(content)
 
         self.assertEqual(5, data["count"], 'Five jobs saved that are located in Moscow')
+
+    def test_search_by_coordinates_in_radius(self):
+        get_job(point=point_of_vancouver()).save()  # 253km from kamloops
+        get_job(point=point_of_vancouver()).save()
+
+        logger.debug(f'coords of van: {coords_of_vancouver()}')
+
+        get_job(point=point_of_calgary()).save()  # 442 km from kamloops
+        get_job(point=point_of_calgary()).save()
+
+        logger.debug(f'coords of calgary: {coords_of_calgary()}')
+
+        get_job(point=point_of_moscow()).save()
+        get_job(point=point_of_moscow()).save()
+
+        sample_coords = coords_of_kamloops()
+
+        url = f'{reverse("job-list")}?lng={sample_coords[0]}&lat={sample_coords[1]}&radius=1000'
+        response = self.client.get(url, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
+        self.assertEqual(4, data["count"], 'Four jobs within 1000km of Kamloops')
+
+        url = f'{reverse("job-list")}?lng={sample_coords[0]}&lat={sample_coords[1]}&radius=300'
+        response = self.client.get(url, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
+        self.assertEqual(2, data["count"], 'Vancouver is within 300km of Kamloops')
 
     def test_search_job_keywords(self):
         get_job(title="Senior Software Engineer").save()

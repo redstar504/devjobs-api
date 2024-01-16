@@ -22,6 +22,19 @@ class JobViewSet(viewsets.ModelViewSet):
         queryset = Job.objects.all().order_by('id')
         full_time_only = self.request.query_params.get('fullTimeOnly', default=None)
         keywords = self.request.query_params.get('keywords', default=None)
+        place_id = self.request.query_params.get('placeId', default=None)
+        longitude = self.request.query_params.get('lng', default=None)
+        latitude = self.request.query_params.get('lat', default=None)
+        radius = self.request.query_params.get('radius', default=1000)
+        search_coords = None
+
+        if longitude is not None and latitude is not None:
+            search_coords = (float(longitude), float(latitude))
+            logger.debug(f"[JobSearch] geo filter applied {search_coords}:{radius}")
+
+        if place_id is not None:  # todo: complete impl. + caching
+            logger.debug(f'[JobSearch] filtering on place ID: {place_id}')
+            search_coords = coordinates_from_place_id(place_id)
 
         if keywords is not None:
             CharField.register_lookup(SearchLookup)
@@ -30,15 +43,10 @@ class JobViewSet(viewsets.ModelViewSet):
             ).filter(search=keywords)
 
         if full_time_only is not None:
-            logger.debug("[Job Listing] filtering on full time positions")
+            logger.debug("[JobSearch] filtering on full time positions")
             queryset = queryset.filter(contract_type="FT")
 
-        place_id = self.request.query_params.get('placeId', default=None)
-
-        if place_id is not None:  # todo: complete impl. + caching
-            logger.debug(f'[Job List] filtering on place ID: {place_id}')
-            radius = self.request.query_params.get('radius', default=1000)
-            search_coords = coordinates_from_place_id(place_id)
+        if search_coords is not None:
             search_point = Point(search_coords[0], search_coords[1], srid=4326)
             queryset = (
                 queryset.annotate(distance=Distance("point", search_point))
