@@ -123,12 +123,8 @@ class JobSearchTestCase(APITestCase):
         get_job(point=point_of_vancouver()).save()  # 253km from kamloops
         get_job(point=point_of_vancouver()).save()
 
-        logger.debug(f'coords of van: {coords_of_vancouver()}')
-
         get_job(point=point_of_calgary()).save()  # 442 km from kamloops
         get_job(point=point_of_calgary()).save()
-
-        logger.debug(f'coords of calgary: {coords_of_calgary()}')
 
         get_job(point=point_of_moscow()).save()
         get_job(point=point_of_moscow()).save()
@@ -168,3 +164,36 @@ class JobSearchTestCase(APITestCase):
         data = json.loads(content)
 
         self.assertEqual(5, data["count"], 'Five jobs mentioning engineering')
+
+    def test_search_job_location_query(self):
+        get_job(city="Eagleton").save()
+        get_job(city="Eagletown").save()
+        get_job(city="North Eagleton").save()
+        get_job(country="Eagles").save()
+
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+
+        url = f'{reverse("job-list")}?locationQuery=eagle'
+        response = self.client.get(url, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
+        self.assertEqual(4, data["count"], 'Four jobs with eagle locations')
+
+    def test_search_job_location_query_portland(self):
+        get_job(city="Portland", contract_type="PT").save()
+
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+        get_job(city="foo", country="bar").save()
+
+        url = f'{reverse("job-list")}?locationQuery=Portland&fullTimeOnly=false'
+        response = self.client.get(url, format="json")
+        content = response.content.decode("utf-8")
+        data = json.loads(content)
+
+        self.assertEqual(1, data["count"], 'One job in Portland')
