@@ -38,7 +38,7 @@ class JobViewSet(viewsets.ModelViewSet):
             search_coords = coordinates_from_place_id(place_id)
             logger.debug(f"[JobSearch] implicit coordinate supplied: {search_coords}")
 
-        if longitude is None and latitude is None and location_query is not None:
+        if search_coords is None and location_query is not None:
             logger.debug(f'[JobSearch] filtering on location query: {location_query}')
             queryset = queryset.filter(city__icontains=location_query) | queryset.filter(
                 country__icontains=location_query)

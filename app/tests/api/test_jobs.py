@@ -112,7 +112,7 @@ class JobSearchTestCase(APITestCase):
         get_job(point=point_of_moscow()).save()
         get_job(point=point_of_moscow()).save()
 
-        url = f'{reverse("job-list")}?placeId={place_id_of_moscow()}&radius=1000'
+        url = f'{reverse("job-list")}?locationQuery=foo&placeId={place_id_of_moscow()}&radius=1000'
         response = self.client.get(url, format="json")
         content = response.content.decode("utf-8")
         data = json.loads(content)
