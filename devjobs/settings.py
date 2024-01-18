@@ -75,7 +75,7 @@ MIDDLEWARE = [
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
-    CORS_ALLOWED_ORIGINS = ["https://devjobs.icyloops.com"]
+    CORS_ALLOWED_ORIGINS = ["https://devjobs.icyloops.com", "https://devjobs-react.onrender.com"]
 
 ROOT_URLCONF = 'devjobs.urls'
 
