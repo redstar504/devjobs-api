@@ -11,11 +11,3 @@ This command transforms the JSON data provided by FM into our own model represen
 The mapfixtures command generates JSON that can then be imported into our own database using:
 
 `python manage.py loaddata <companies|jobs>.json`
-
-### Side notes
-
-When working with the GIS features, get the hectometers between two Point objects using:
-
-`Point.distance(Point)`
-
-We may have to work with Point SRIDs to increase point-to-point accuracy.
