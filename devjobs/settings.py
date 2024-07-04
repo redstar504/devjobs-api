@@ -18,7 +18,29 @@ import environ
 
 from app.logger import logger
 
+
+def get_default_shell_env(key, default_value):
+    value = os.environ.get(key, default_value)
+    if isinstance(value, str) and ',' in value:
+        return value.split(',')
+    elif value:
+        return value
+    else:
+        return default_value
+
+
 env = environ.Env(
+    DEBUG=(bool, get_default_shell_env('DEBUG', False)),
+    SECRET_KEY=(str, get_default_shell_env('SECRET_KEY', '123')),
+    ALLOWED_HOSTS=(list, get_default_shell_env('ALLOWED_HOSTS', ['192.168.1.69'])),
+    ALLOWED_ORIGINS=(list, get_default_shell_env('ALLOWED_ORIGINS', [
+        'https://192.168.1.69:15174',
+        'http://192.168.1.69:5174',
+    ])),
+    TRUSTED_ORIGINS=(list, get_default_shell_env('TRUSTED_ORIGINS', [
+        'https://192.168.1.69:15174',
+        'http://192.168.1.69:5174',
+    ])),
     USE_GMAPS_MOCKS=(bool, False),
     GMAPS_API_KEY=(str, '')
 )
@@ -39,11 +61,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-_nq@2%x+@kzmv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['localhost', "api.devjobs.icyloops.com", "192.168.1.69"]
-
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -72,10 +90,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
-else:
-    CORS_ALLOWED_ORIGINS = ["https://devjobs.icyloops.com", "https://devjobs-react.onrender.com"]
+CORS_ALLOWED_ORIGINS = env('ALLOWED_ORIGINS')
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = env('TRUSTED_ORIGINS')
 
 ROOT_URLCONF = 'devjobs.urls'
 
@@ -111,7 +128,7 @@ WSGI_APPLICATION = 'devjobs.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default='postgis://devjobs:devjobs@localhost:5432/devjobs',
-        conn_max_age=600
+        test_options={'NAME': 'devjobs_test'}
     )
 }
 
@@ -201,7 +218,6 @@ LOGGING = {
         },
     },
 }
-
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
