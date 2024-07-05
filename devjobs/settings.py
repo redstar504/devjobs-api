@@ -59,7 +59,7 @@ USE_GMAPS_MOCKS = env('USE_GMAPS_MOCKS')
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-_nq@2%x+@kzmvjylh$5!1sqd0j53gzwyg%i5)iou1n!=dji@(0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
