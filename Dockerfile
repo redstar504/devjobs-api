@@ -1,29 +1,34 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/root/.local/bin:$PATH"
 
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock /app/
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    gdal-bin \
-    libgdal-dev \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        curl \
+        gdal-bin \
+        libgdal-dev \
+        gcc \
+        build-essential \
+        libpq-dev \
+    && apt-get install -f -y \
+    && dpkg --configure -a \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.8.3
 
-ENV PATH="${PATH}:/root/.local/bin"
+COPY pyproject.toml ./
 
-RUN poetry config virtualenvs.create false && poetry install --no-root --no-interaction --no-ansi --no-dev
+RUN poetry config virtualenvs.create false && \
+    poetry install --no-root --no-interaction --no-ansi --only main
 
-COPY . /app/
+COPY . .
 
 EXPOSE 8000
-
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
 CMD ["/entrypoint.sh"]
-#CMD ["tail", "-f", "/dev/null"]
