@@ -18,29 +18,12 @@ import environ
 
 from app.logger import logger
 
-
-def get_default_shell_env(key, default_value):
-    value = os.environ.get(key, default_value)
-    if isinstance(value, str) and ',' in value:
-        return value.split(',')
-    elif value:
-        return value
-    else:
-        return default_value
-
-
 env = environ.Env(
-    DEBUG=(bool, get_default_shell_env('DEBUG', False)),
-    SECRET_KEY=(str, get_default_shell_env('SECRET_KEY', '123')),
-    ALLOWED_HOSTS=(list, get_default_shell_env('ALLOWED_HOSTS', ['192.168.1.69'])),
-    ALLOWED_ORIGINS=(list, get_default_shell_env('ALLOWED_ORIGINS', [
-        'https://192.168.1.69:15174',
-        'http://192.168.1.69:5174',
-    ])),
-    TRUSTED_ORIGINS=(list, get_default_shell_env('TRUSTED_ORIGINS', [
-        'https://192.168.1.69:15174',
-        'http://192.168.1.69:5174',
-    ])),
+    DEBUG=(bool, False),
+    SECRET_KEY=(str, "123"),
+    ALLOWED_HOSTS=(list, []),
+    ALLOWED_ORIGINS=(list, []),
+    TRUSTED_ORIGINS=(list, []),
     USE_GMAPS_MOCKS=(bool, False),
     GMAPS_API_KEY=(str, '')
 )
@@ -56,7 +39,7 @@ USE_GMAPS_MOCKS = env('USE_GMAPS_MOCKS')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-_nq@2%x+@kzmvjylh$5!1sqd0j53gzwyg%i5)iou1n!=dji@(0')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
